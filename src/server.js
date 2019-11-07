@@ -1,17 +1,23 @@
 import { join } from "path";
 import express from "express";
-import socktIO from "socket.io";
+import socketIO from "socket.io";
 
 const PORT = 4000;
 const app = express();
 
 app.set("view engine", "pug");
-app.set("views", join(__dirname, "views"))
+app.set("views", join(__dirname, "views"));
 
-app.use(express.static(join(__dirname, "static")))
+app.use(express.static(join(__dirname, "static")));
 
-app.get("/", (req, res) => res.render("home"))
+app.get("/", (req, res) => res.render("home"));
 
-const handleListening = () => console.log(`Server Start : http://localhost:${PORT}`)
+const handleListening = () => {
+  console.log(`Server Start : http://localhost:${PORT}`);
+};
 
-app.listen(PORT, handleListening)
+const server = app.listen(PORT, handleListening);
+
+// http://localhost:4000/socket.io/socket.io.js
+//socket말고 ws라는 라이브러리도있다.
+const io = socketIO(server);
