@@ -5,5 +5,6 @@ painting game using node, socketio, gulp
 ## To Do:
  - [X] Server
  - [X] Pug
- - [ ] Static
+ - [X] Static
+ - [X] ESLint
  - [ ] SocketIO

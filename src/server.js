@@ -1,4 +1,4 @@
-import {join} from "path";
+import { join } from "path";
 import express from "express";
 import socktIO from "socket.io";
 
