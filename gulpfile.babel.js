@@ -2,6 +2,7 @@ import gulp from "gulp";
 import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import minifyCSS from "gulp-csso";
+import del from "del";
 
 sass.compiler = require("node-sass");
 
@@ -13,8 +14,10 @@ const paths = {
   }
 };
 
-function styles() {
-  return gulp
+const clean = () => del(["src/static"]);
+
+const styles = () =>
+  gulp
     .src(paths.styles.src)
     .pipe(sass())
     .pipe(
@@ -25,13 +28,10 @@ function styles() {
     )
     .pipe(minifyCSS())
     .pipe(gulp.dest(paths.styles.dest));
-}
 
 // 모든 glup파이릉ㄹ 감시함
-function watchFiles() {
-  gulp.watch(paths.styles.watch, styles);
-}
+const watchFiles = () => gulp.watch(paths.styles.watch, styles);
 
-const dev = gulp.series([styles, watchFiles]);
+const dev = gulp.series([clean, styles, watchFiles]);
 
 export default dev;
