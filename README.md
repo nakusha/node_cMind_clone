@@ -9,5 +9,8 @@ painting game using node, socketio, gulp
  - [X] ESLint
  - [ ] SocketIO
 
-
+## Gulp
  glupjs.com
+
+## Browserify
+ browserify.org
