@@ -11,8 +11,10 @@ html(lang="en")
             form
                 input(placeholder="What's your nickname", type="text")
         .gameContainer#jsGame
-            h1 You are logged In
-            div#jsNotifications
+            .chat
+                ul.chat__messages#jsMessages
+                form.chat__form#jsSendMsg
+                    input(placeholder="Write a message", type="text")
         //- 서버에서 보낸 events를 받는 부분
         script.
             window.events = !{events}
