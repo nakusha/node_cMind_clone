@@ -1,3 +1,3 @@
+import "./socket";
 import "./login";
-
-console.log(window.socket);
+import "./notification";
