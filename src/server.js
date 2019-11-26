@@ -27,4 +27,4 @@ const server = app.listen(PORT, handleListening);
 //socket말고 ws라는 라이브러리도있다.
 const io = socketIO.listen(server);
 
-io.on("connection", socket => socketController(socket));
+io.on("connection", socket => socketController(socket, io));
