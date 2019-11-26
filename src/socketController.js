@@ -44,7 +44,7 @@ const socketController = (socket, io) => {
     if (sockets.length === 1) {
       endGame();
     } else if (painter) {
-      if (painter.id === sockets.is){
+      if (painter.id === sockets.is) {
         endGame();
       }
     }

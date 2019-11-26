@@ -96,8 +96,6 @@ const handleCM = event => {
   event.preventDefault();
 };
 
-
-
 Array.from(colors).forEach(color =>
   color.addEventListener("click", handleColorClick)
 );
