@@ -123,8 +123,8 @@ export const enableCanvas = () => {
   canvas.addEventListener("click", handleCanvasClick);
 };
 
-export const hideCanvasControls = () => (controls.style.opacity = 0);
-export const showCanvasControls = () => (controls.style.opacity = 1);
+export const hideCanvasControls = () => (controls.style.display = "none");
+export const showCanvasControls = () => (controls.style.display = "flex");
 
 if (canvas) {
   canvas.addEventListener("contextmenu", handleCM);

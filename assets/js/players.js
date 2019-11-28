@@ -5,6 +5,7 @@ import {
   showCanvasControls,
   resetCanvase
 } from "./paint";
+import { disableChat, enableChat } from "./chat";
 
 const board = document.getElementById("jsPBoard");
 const notifs = document.getElementById("jsNotifs");
@@ -28,11 +29,13 @@ export const handleGameStart = () => {
   setNotis("");
   disableCanvas();
   hideCanvasControls();
+  enableChat();
 };
 
 export const handlePainterNotif = ({ word }) => {
   enableCanvas();
   showCanvasControls();
+  disableChat();
   setNotis(`You are the lader, paint :${word}`);
 };
 
@@ -41,4 +44,8 @@ export const handleGameEnded = () => {
   disableCanvas();
   hideCanvasControls();
   resetCanvase();
+};
+
+export const handleGameStarting = () => {
+  setNotis("Game will start soon");
 };
